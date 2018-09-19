@@ -1,6 +1,7 @@
 
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView
+from django.views.generic.edit import CreateView
 from .models import Post
 
 
@@ -19,3 +20,9 @@ def post_detail(request, year, month, day, post):
                              publish__month=month,
                              publish__day=day)
     return render(request, 'blog/post/detail.html', {'post': post})
+
+
+class PostCreateView(CreateView):
+    model = Post
+    template_name = 'blog/post/create.html'
+    fields = '__all__'
