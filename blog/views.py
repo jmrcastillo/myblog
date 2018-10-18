@@ -25,4 +25,4 @@ def post_detail(request, year, month, day, post):
 class PostCreateView(CreateView):
     model = Post
     template_name = 'blog/post/create.html'
-    fields = '__all__'
+    fields = ['title', 'author', 'body']
