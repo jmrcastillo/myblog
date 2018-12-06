@@ -1,7 +1,5 @@
 
 
-from datetime import date
-
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.utils import timezone
@@ -33,9 +31,10 @@ class BlogTests(TestCase):
         self.assertEqual(str(post), post.title)
 
     def test_post_content(self):
-        self.assertEqual(f'{self.post.title}', 'A good title')
-        self.assertEqual(f'{self.post.author}', 'testuser')
-        self.assertEqual(f'{self.post.body}', 'Nice body content')
+        self.assertEqual(self.post.title, 'A good title')
+        self.assertEqual(str(self.post.author), 'testuser')
+        self.assertEqual(self.post.body, 'Nice body content')
+        # self.assertEqual(f'{self.post.body}', 'Nice body content')
 
     def test_post_list_view(self):
         response = self.client.get(reverse('blog:post_list'))
@@ -44,7 +43,9 @@ class BlogTests(TestCase):
         self.assertTemplateUsed(response, 'blog/post/list.html')
 
     def test_post_detail_view(self):
-        response = self.client.get('/blog/2018/11/27/A-good-title/')
+        response = self.client.get('/blog/2018/12/05/A-good-title/')
         no_response = self.client.get('blog/9')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(no_response.status_code, 404)
+        self.assertContains(response, 'Nice body content')
+        self.assertTemplateUsed(response, 'blog/post/detail.html')
