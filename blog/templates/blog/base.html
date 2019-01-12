@@ -21,9 +21,16 @@
 					<p> <a href="{% url 'blog:post_list' %}">My Blog </a></p>
 				</div>
 
-			<div class="content text text-medium col-xs-12 col-sm-12 col-md-8 col-lg-8">
+			<div class="content text text-medium col-xs-12 col-sm-12 col-md-2 col-lg-8">
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                {% endif %}
 				{% block content %}
-				
+
 				{% endblock content %}
 			</div>
 		</div>
