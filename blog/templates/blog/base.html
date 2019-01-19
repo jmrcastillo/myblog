@@ -13,7 +13,34 @@
 </head>
 <body>
 
-	<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <a class="navbar-brand mr-4" href="/">Django Blog</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#the-menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+
+                <div class="navbar-nav">
+                    <a class="navbar-text" href="/">Home</a>
+                    <a class="navbar-text nav-link" href="/">About</a>
+                </div>
+                <!-- Navbar Right Sige -->
+                <div class="navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                        <a class="navbar-text nav-link " href="{% url 'profile' %}">Profile</a>
+                        <a class="navbar-text nav-link " href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                        <a class="navbar-text nav navbar-nav " href="{% url 'login' %}">Login</a>
+                        <a class="navbar-link navbar-text nav navbar-nav " href="{% url 'register' %}">Register</a>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+	<div class="container container-marg">
 		<div class="row">
 
 			<div class="sidebar col-xs-11 col-sm-11 col-md-3 col-lg-3">
