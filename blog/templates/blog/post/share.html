@@ -1,13 +1,13 @@
 
 
-{% extends "blog/base.html" %}
+{% extends "base.html" %}
 
 {% block title %} Share a post {% endblock %}
 
 {% block content %}
     {% if sent %}
         <h1> E-mail Succesfully sent </h1>
-        <p> 
+        <p>
             "{{ post.title }}" was succesfully sent send to {{ cd.to }}
         </p>
 

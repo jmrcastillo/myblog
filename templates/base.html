@@ -1,0 +1,46 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}myblog{% endblock title %}</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    {% include 'snippets/nav.html' %}
+
+	<div class="container container-marg">
+		<div class="row">
+
+    <!-- SIDEBAR -->
+            {% include 'snippets/sidebar.html' %}
+
+    <!-- CONTENT -->
+			<div class="content text text-medium col-xs-12 col-sm-12 col-md-2 col-lg-8">
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                {% endif %}
+				{% block content %}
+
+				{% endblock content %}
+			</div>
+
+		</div>
+	</div>
+
+	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>
