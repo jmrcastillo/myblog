@@ -2,8 +2,9 @@
 
 {% extends "base.html" %}
 
-{% block title %} Share a post {% endblock %}
-
+{% block title %}
+    {{ block.super }} | Share
+{% endblock %}
 {% block content %}
     {% if sent %}
         <h1> E-mail Succesfully sent </h1>

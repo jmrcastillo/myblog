@@ -2,6 +2,11 @@
 
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+
+{% block title %}
+{{ block.super }} || Register
+{% endblock %}
+
 {% block content %}
 <div class="content-section">
     <form method="POST">

@@ -2,6 +2,11 @@
 
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+
+{% block title %}
+{{ block.super }} || Profile
+{% endblock %}
+
 {% block content %}
 
 <h1>{{ user.username }}</h1>
