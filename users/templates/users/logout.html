@@ -1,12 +1,13 @@
 
 
-{% extends "base.html" %}
+{% extends "base_users.html" %}
 
 {% block title %}
 {{ block.super }} || Logout
 {% endblock %}
 
-{% block content %}
+{% block content_users %}
+<br/><br/><br/>
     <h2>You have been logged out</h2>
     <div class="border-top pt-3">
         <small class="text-muted">
@@ -16,4 +17,4 @@
         </small>
     </div>
 
-{% endblock content %}
+{% endblock content_users %}

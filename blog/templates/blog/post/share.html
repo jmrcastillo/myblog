@@ -1,11 +1,11 @@
 
 
-{% extends "base.html" %}
+{% extends "blog/blog.html" %}
 
 {% block title %}
     {{ block.super }} | Share
 {% endblock %}
-{% block content %}
+{% block content_blog %}
     {% if sent %}
         <h1> E-mail Succesfully sent </h1>
         <p>
@@ -20,4 +20,4 @@
             <input type="submit" value="Send e-mail">
         </form>
     {% endif %}
-{% endblock %}
+{% endblock_blog %}

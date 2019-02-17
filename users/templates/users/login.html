@@ -1,14 +1,13 @@
 
 
-{% extends "base.html" %}
+{% extends "base_users.html" %}
 {% load crispy_forms_tags %}
 
 {% block title %}
 {{ block.super }} || login
 {% endblock %}
 
-{% block content %}
-<div class="content-section">
+{% block content_users %}
     <form method="post">
         {% csrf_token %}
         <fieldset class="form-group">
@@ -28,5 +27,4 @@
             </a>
         </small>
     </div>
-</div>
-{% endblock content %}
+{% endblock content_users %}

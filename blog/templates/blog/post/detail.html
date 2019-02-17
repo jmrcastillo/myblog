@@ -1,12 +1,12 @@
 
 
-{% extends "base.html" %}
+{% extends "blog/blog.html" %}
 
 {% block title %}
     {{ block.super }} | Detail
 {% endblock title %}
 
-{% block content %}
+{% block content_blog %}
 	<h1> {{ post.title }} </h1>
 	<p class="date">
 		Published {{ post.publish }} by {{ post.author }}
@@ -46,4 +46,4 @@
         <p><input type="submit" value="Add comment"></p>
     </form>
     {% endif %}
-{% endblock content %}
+{% endblock content_blog %}
