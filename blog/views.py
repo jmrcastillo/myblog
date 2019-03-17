@@ -1,7 +1,7 @@
 
 
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
 # from django.views.generic.edit import CreateView
 from .models import Post
 from .forms import EmailPostForm, CommentForm
@@ -18,6 +18,7 @@ class PostListView(ListView):
 def post_detail(request, post):
     post = get_object_or_404(Post, slug=post)
 
+    # Comment to blog post
     # List of active comments for this post
     comments = post.comments.filter(active=True)
 
@@ -42,10 +43,11 @@ def post_detail(request, post):
                                                 'comment_form': comment_form
                                                     })
 
-# class PostCreateView(CreateView):
-#     model = Post
-#     template_name = 'blog/post/create.html'
-#     fields = ['title', 'author', 'body']
+
+class PostCreateView(CreateView):
+    model = Post
+    template_name = 'blog/post/create.html'
+    fields = ['title', 'body']
 
 
 def post_share(request, post_id):
@@ -61,7 +63,7 @@ def post_share(request, post_id):
             cd = form.cleaned_data
             post_url = request.build_absolute_uri(post.get_absolute_url())
             subject = '{} ({}) recommends you reading "{}"'.format(
-          	          cd['name'], cd['email'], post.title)
+                    cd['name'], cd['email'], post.title)
             message = 'Read "{}" at {}\n\n{}\'s comments: {}'.format(
                     post.title, post_url, cd['name'], cd['comments'])
             send_mail(subject, message, 'admin@myblog.com', [cd['to']])
