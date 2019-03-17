@@ -32,7 +32,7 @@ class Post(models.Model):
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10,
                               choices=STATUS_CHOICE,
-                              default='published')
+                              default='draft')
 
     objects = models.Manager()          # default the manager
     published = PublishedManager()        # Our custom manager
