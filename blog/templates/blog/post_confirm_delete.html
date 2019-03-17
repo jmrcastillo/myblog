@@ -1,0 +1,30 @@
+
+
+
+
+{% extends "blog/blog.html" %}
+
+{% block title %}
+    {{ block.super }} | Create
+{% endblock title %}
+
+{% block content %}
+<br>
+<br>
+<br>
+    <div class="content-section" style="width: 600px;">
+	<h1>New Post</h1>
+    <form method="POST"> {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Delete Post</legend>
+            <h2>Are you sure you want to delete {{ object.title }}</h2>
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-danger" type="submit">Yes, Delete!!!</button>
+            <a class="btn btn-info" href="{% url 'blog:post_detail' object.slug %}">Cancel</a>
+        </div>
+    </form>
+    </div>
+
+{% endblock content %}
+

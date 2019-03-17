@@ -10,9 +10,16 @@
 	<h1> {{ post.title }} </h1>
 	<p class="date">
 		Published {{ post.publish }} by {{ post.author }}
+
 	</p>
 	{{ post.body | linebreaks }}
     <p>
+    <p>
+        {% if post.author == user %}
+            <a class="btn btn-info" href="{% url 'blog:post_update' post.slug %}">Update</a>
+            <a class="btn btn-danger" href="{% url 'blog:post_delete' post.slug %}">Delete</a>
+        {% endif %}
+    </p>
     <a href="{% url 'blog:post_share' post.id %}">
         Share this post
     </a>

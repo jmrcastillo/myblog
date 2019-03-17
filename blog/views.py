@@ -1,8 +1,9 @@
 
 
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, CreateView
-# from django.views.generic.edit import CreateView
+from django.views.generic import ListView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Post
 from .forms import EmailPostForm, CommentForm
 from django.core.mail import send_mail
@@ -44,14 +45,56 @@ def post_detail(request, post):
                                                     })
 
 
-class PostCreateView(CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     template_name = 'blog/post/create.html'
     fields = ['title', 'body']
 
     def form_valid(self, form):
+        """
+        required author before to submit form
+        """
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+
+class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """
+    Update post by User
+    """
+    model = Post
+    template_name = 'blog/post/create.html'
+    fields = ['title', 'body']
+
+    def form_valid(self, form):
+        """
+        required author before to submit form
+        """
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        """
+        Test if the user is equal to author
+        """
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
+
+
+class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Post
+    success_url = '/'
+
+    def test_func(self):
+        """
+        Test if the user is equal to author
+        """
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
 
 
 def post_share(request, post_id):
