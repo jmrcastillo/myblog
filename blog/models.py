@@ -3,6 +3,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
+from django.utils.text import slugify
 from django.contrib.auth.models import User
 
 
@@ -44,6 +45,13 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('blog:post_detail', args=[self.slug])
+
+    def save(self, *args, **kwargs):
+        """
+        Form post - auto save slug
+        """
+        self.slug = slugify(self.title)
+        super(Post, self).save(*args, **kwargs)
 
 
 class Comment(models.Model):

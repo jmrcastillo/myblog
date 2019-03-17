@@ -49,6 +49,10 @@ class PostCreateView(CreateView):
     template_name = 'blog/post/create.html'
     fields = ['title', 'body']
 
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
 
 def post_share(request, post_id):
     # retrieve post by id
