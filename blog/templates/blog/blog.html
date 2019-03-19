@@ -11,8 +11,8 @@
             <p><h3> <a href="{% url 'blog:post_list' %}">My Blog </a></h3></p>
 
                 {% if user.is_authenticated %}
-                <h2> {{ user }} </h2>
-                <p> I've {% total_posts %} Blog Post</p>
+                <h3> {{ user }} </h3>
+                <p> You have {% total_posts user %} Blog Post</p>
                 {% endif %}
 
                 <h3>Latest Post</h3>
