@@ -43,7 +43,7 @@ class BlogTests(TestCase):
         self.assertTemplateUsed(response, 'blog/post/list.html')
 
     def test_post_detail_view(self):
-        response = self.client.get('/blog/A-good-title/')
+        response = self.client.get('/a-good-title/')
         no_response = self.client.get('blog/9')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(no_response.status_code, 404)
