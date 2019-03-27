@@ -1,6 +1,6 @@
 
 
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-fixed-top">
     <div class="container">
         <a class="navbar-brand mr-4" href="{% url 'blog:post_list' %}">Django Blog</a>
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#the-menu">
@@ -18,8 +18,8 @@
                     <a class="navbar-text nav-link " href="{% url 'profile' %}">Profile</a>
                     <a class="navbar-text nav-link " href="{% url 'logout' %}">Logout</a>
                 {% else %}
-                    <a class="navbar-text nav navbar-nav " href="{% url 'login' %}">Login</a>
-                    <a class="navbar-link navbar-text nav navbar-nav " href="{% url 'register' %}">Register</a>
+                    <a class="navbar-text navbar-nav " href="{% url 'login' %}">Login</a>
+                    <a class="navbar-nav navbar-link navbar-text " href="{% url 'register' %}">Register</a>
                 {% endif %}
             </div>
 
