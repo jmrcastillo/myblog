@@ -12,12 +12,13 @@
         {% csrf_token %}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">
-                login
+                <br>
+                <p>LOGIN</p>
             </legend>
             {{ form|crispy }}
         </fieldset>
         <div class="form-group">
-            <button class="btn btn-info" type="submit"> login </button>
+            <button class="btn login" type="submit"> login </button>
         </div>
     </form>
     <div class="border-top pt-3">
