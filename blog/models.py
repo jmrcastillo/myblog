@@ -35,7 +35,7 @@ class Post(models.Model):
                               default='draft')
 
     objects = models.Manager()          # default the manager
-    published = PublishedManager()        # Our custom manager
+    published = PublishedManager()        # our custom manager
 
     class Meta:
         ordering = ('-publish',)
@@ -48,10 +48,11 @@ class Post(models.Model):
 
     def save(self, *args, **kwargs):
         """
-        Form post - auto save slug
+        form post - auto save slug
         """
         self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
+
 
 
 class Comment(models.Model):
