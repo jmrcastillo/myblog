@@ -134,8 +134,8 @@ EMAIL_HOST_PASSWORD = 'your_password'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
 # LOGIN_REDIRECT_URL = '/admin'
 LOGIN_REDIRECT_URL = 'blog:post_list'
 LOGIN_URL = 'login'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

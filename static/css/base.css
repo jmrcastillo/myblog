@@ -95,12 +95,22 @@ a.btn-info {
 }
 
 /* forms */
+legend {
+    color: #0d4d4b;
+}
 label {
     float:left;
     clear:both;
     color:#333;
-    margin-bottom:4px;
+    margin-bottom:3px;
 }
+
+div.form-group {
+    padding: 0;
+    margin: 0;
+    width: 360px;
+}
+
 .errorlist {
     color:#cc0033;
     float:left;
