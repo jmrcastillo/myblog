@@ -60,19 +60,20 @@ nav.navbar {
     color: #09093b;
 }
 
-a.navbar-brand {
-    color: #fff;
+.navbar-brand.custom {
+    color: #0d4d4b;
     font-size: 21px;
     font-weight: bold;
 }
 
-a.nav-link {
-    color: #fff;
+.navbar-nav .nav-link.custom {
+    color: #0d4d4b;
     font-size: 18px;
     font-weight: bold;
 }
 
-a.nav-link:hover {
+.navbar .nav-link.custom:hover,
+.navbar-brand.custom:hover {
     color: #fff;
     /*transition*/
     o-transition:.5s;
