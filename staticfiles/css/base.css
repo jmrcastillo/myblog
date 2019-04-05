@@ -1,0 +1,133 @@
+/*body*/
+body {
+    margin:0;
+    padding:0;
+    font-family:helvetica, sans-serif;
+    font-size: 16px;
+}
+
+a {
+    color:#00abff;
+    text-decoration:none;
+}
+
+h1 {
+    font-weight:normal;
+    border-bottom:1px solid #bbb;
+    padding:0 0 10px 0;
+}
+
+h2 {
+    font-weight:normal;
+    margin:30px 0 0;
+}
+
+.container-marg {
+    margin-top: 90px
+}
+
+.content {
+    float:left;
+    width:90%;
+    padding:0 0 0 30px;
+}
+
+/*SIDEBAR*/
+.sidebar {
+    float:right;
+    width:30%;
+    padding:10px;
+    background:#efefef;
+    height:100%;
+}
+
+p, h1, h2, h3, a, li{
+    color: #000;
+    font-family: georgia, serif;
+}
+
+p.date {
+    color:#ccc;
+    font-family: georgia, serif;
+    font-size: 12px;
+    font-style: italic;
+}
+
+
+/*navigation*/
+nav.navbar {
+    background-color: #679b99;
+    color: #09093b;
+}
+
+.navbar-brand.custom {
+    color: #0d4d4b;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link.custom {
+    color: #0d4d4b;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar .nav-link.custom:hover,
+.navbar-brand.custom:hover {
+    color: #fff;
+    /*transition*/
+    o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    /* ...and now for the proper property */
+   transition:.5s;
+}
+
+/* pagination */
+.pagination {
+    margin:40px 0;
+    font-weight:bold;
+}
+
+/*button*/
+a.btn-info {
+    background: #0d4d4b;
+}
+
+/* forms */
+legend {
+    color: #0d4d4b;
+}
+label {
+    float:left;
+    clear:both;
+    color:#333;
+    margin-bottom:3px;
+}
+
+div.form-group {
+    padding: 0;
+    margin: 0;
+    width: 360px;
+}
+
+.errorlist {
+    color:#cc0033;
+    float:left;
+    clear:both;
+    padding-left:10px;
+}
+
+/* comments */
+.comment {
+    padding:10px;
+}
+.comment:nth-child(even) {
+    background:#efefef;
+}
+.comment .info {
+    font-weight:bold;
+    font-size:12px;
+    color:#666;
+}

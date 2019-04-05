@@ -1,0 +1,19 @@
+
+
+div.content-section {
+    width: 450px;
+    margin: auto auto;
+}
+
+/*LOGIN*/
+button.login, button.register {
+    color: #fff;
+    background: #0d4d4b;
+}
+
+a.ml-2, .login {
+    color: #0d4d4b;
+    font-size: 18px;
+    font-weight: bold;
+}
+
