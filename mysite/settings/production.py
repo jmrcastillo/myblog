@@ -6,6 +6,9 @@ import django_heroku
 
 DEBUG = False
 
+# security warning: keep the secret key used in production secret!
+SECRET_KEY = 'n6$gz-vsdfadf84=@((@%%s*ak@wp!c)bxk$w3)js-0fhogp0m(#xab$'
+
 ALLOWED_HOSTS = ['myblog-jmr.heroku.app']
 
 DATABASES = {
