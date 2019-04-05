@@ -2,6 +2,7 @@
 
 from .base import *
 
+import django_heroku
 
 DEBUG = False
 
@@ -17,3 +18,5 @@ DATABASES = {
         'PORT': '5432'
     }
 }
+
+django_heroku.settings(local())
