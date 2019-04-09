@@ -1,13 +1,15 @@
 
 
 from .base import *
+import os
+
 
 import django_heroku
 
 DEBUG = True
 
 # security warning: keep the secret key used in production secret!
-SECRET_KEY = 'n6$gz-vsdfadf84=@((@%%s*ak@wp!c)bxk$w3)js-0fhogp0m(#xab$'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 ALLOWED_HOSTS = ['myblog-jmr.herokuapp.com']
 
