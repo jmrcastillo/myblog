@@ -6,7 +6,7 @@ import os
 
 import django_heroku
 
-DEBUG = True
+DEBUG = False
 
 # security warning: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
