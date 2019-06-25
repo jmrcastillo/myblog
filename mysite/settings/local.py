@@ -1,6 +1,7 @@
 
 
 from .base import *
+import os
 
 
 DEBUG = True
@@ -15,6 +16,7 @@ MIDDLEWARE += [
         'debug_toolbar.middleware.DebugToolbarMiddleware',
     ]
 
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG_TOOLBAR_PANELS = [
     'debug_toolbar.panels.versions.VersionsPanel',
