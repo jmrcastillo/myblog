@@ -1,11 +1,10 @@
-# check my simple blog project
+# Check my simple blog project
 
 https://myblog-jmr.herokuapp.com
 
 
-======
-BLOG
-======
+# BLOG
+
 
 Blog is a simple Django App that is an onlien journal
 or informal website displaying information in the reverse
@@ -26,13 +25,13 @@ Quick Start
 
 4. makemigrations and migrate
 	- python manage.py makemigrations
-	- python manage.py migrate --settings=myblog.settings.staging
+	- python manage.py migrate --settings=myblog.settings.local
 
 5. Run localhost
-	- python manage.py runserver --settings=myblog.settings.staging
+	- python manage.py runserver --settings=myblog.settings.local
 
 6. Create Superuser
-	- python manage.py createsuperuser --settings=myblog.settings.staging
+	- python manage.py createsuperuser --settings=myblog.settings.local
 
 
 ENJOY!!!
